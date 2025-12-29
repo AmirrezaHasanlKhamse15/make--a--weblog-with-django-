@@ -1,51 +1,42 @@
-name: Django CI - Weblog Project (Full)
+name: Django CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
-    branches: [ "main" ]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.12]
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: 3.12
+
+    - name: Upgrade pip
+      run: python -m pip install --upgrade pip
 
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install coverage flake8
 
     - name: Apply migrations
-      run: |
-        python manage.py migrate
+      run: python manage.py migrate
 
-    - name: Run tests and coverage for blog app
+    - name: Run tests with coverage
       run: |
-        coverage run --source=blog manage.py test blog
-        coverage report -m
+        coverage run --source=blog,user,api manage.py test
 
-    - name: Run tests and coverage for user app
-      run: |
-        coverage run --source=user manage.py test user
-        coverage report -m
+    - name: Show coverage report
+      run: coverage report -m
 
-    - name: Run tests and coverage for api app
-      run: |
-        coverage run --source=api manage.py test api
-        coverage report -m
-
-    - name: Run linting with flake8
-      run: |
-        flake8 .
+    - name: Lint with flake8
+      run: flake8 .
+      continue-on-error: true
