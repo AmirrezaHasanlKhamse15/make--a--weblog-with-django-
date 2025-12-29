@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from blog.models import Post
-from user.models import CustomUser  # ✅ اینجا اصلاح شد
-
+from user.models import CustomUser  
 # =========================
 # Serializer برای نویسنده
 # =========================
