@@ -51,5 +51,17 @@ weblog_project/
 │   ├── migrations/
 │   │   └── __pycache__
 │   └── __pycache__
+
+
+
+
+
+
+
+
+
+git clone https://github.com/AmirrezaHasanlKhamse15/make--a--weblog-with-django-.git
+cd weblog_project
+
 └── weblog/              # تنظیمات پروژه و فایل‌های اصلی
     └── __pycache__
