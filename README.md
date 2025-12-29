@@ -37,7 +37,8 @@
 ```bash
 git clone https://github.com/AmirrezaHasanlKhamse15/make--a--weblog-with-django-.git
 cd weblog_project
-
+## ساختار کلی پروژه
+```bash 
 weblog_project/
 ├── api/                 # اپلیکیشن API و سرویس‌های جانبی
 │   ├── migrations/      # فایل‌های مهاجرت دیتابیس
