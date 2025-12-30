@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: iransans;
+  font-weight: normal;
+  src: url("./fonts/woff/IRANSansWeb.woff") format("woff"),
+    url("./fonts/woff2/IRANSansWeb.woff2") format("woff2"),
+    url("./fonts/ttf/IRANSansWeb.ttf") format("ttf"),
+    url("./fonts/eot/IRANSansWeb.eot") format("eot");
+}
+
+@font-face {
+  font-family: iransans;
+  font-weight: bold;
+  src: url("./fonts/woff/IRANSansWeb_Bold.woff") format("woff"),
+    url("./fonts/woff2/IRANSansWeb_Bold.woff2") format("woff2"),
+    url("./fonts/ttf/IRANSansWeb_Bold.ttf") format("ttf"),
+    url("./fonts/eot/IRANSansWeb_Bold.eot") format("eot");
+}
+
+@font-face {
+  font-family: akashi;
+  src: url("./fonts/akashi.woff") format("woff"),
+    url("./fonts//akashi.woff2") format("woff2"),
+    url("./font/akashi.ttf") format("ttf"),
+    url("./font/akashi.eot") format("eot");
+}
+
+body {
+  font-family: iransans;
+}
+
+:root {
+  direction: rtl;
+  --bg: oklch(20.8% 0.042 265.755);
+  --text: oklch(55.4% 0.046 257.417);
+  --primary: oklch(35.9% 0.144 278.697);
+  --bgbg: #ffffff;
+
+  .dark {
+    --bg: oklch(92.9% 0.013 255.508);
+    --text: oklch(20.8% 0.042 265.755);
+    --bgbg: #000000;
+  }
+}
